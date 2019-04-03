@@ -28,6 +28,7 @@ class CrawlCommunity(object):
         content = data['content']
         name = content['name']
         address = content['addr']
+        showtag = content['showtag']
         ext = content['ext']
         detail_info = ext['detail_info']
         geo_info = detail_info['guoke_geo']
