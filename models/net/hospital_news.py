@@ -88,7 +88,7 @@ def baidu_sreach_one(page, client, cid):
 
 def main():
     try:
-        cid = 340
+        cid = 339
         client = connect_mysql('127.0.0.1', 'bishe', '123', 3306, 'root')
         print("开始爬取数据，请稍等...")
         start_time = time.time()

@@ -61,3 +61,24 @@ class community_info(object):
         list_hx.append(gg_lon)
         list_hx.append(gg_lat)
         return list_hx
+
+    @staticmethod
+    def bd_to_84(geom_temp):
+        temp_split = geom_temp.split(';')
+        str_geom = ''
+        for coordinates in temp_split:
+            split = coordinates.split(',')
+            hx_list = community_info.bd_to_hx(split[0], split[1])
+            list_84 = community_info.hx_to_84(hx_list[0], hx_list[1])
+            str_geom = str_geom + list_84
+            if len(str_geom) != 0:
+                str_geom = str_geom + ';'
+        print("数据84坐标：" + str_geom)
+        return str_geom
+
+    @staticmethod
+    def bd_to_841(geom_temp):
+        hx_list = community_info.bd_to_hx(geom_temp[0], geom_temp[1])
+        str_geom = community_info.hx_to_84(hx_list[0], hx_list[1])
+        print("数据84坐标：" + str_geom)
+        return str_geom
